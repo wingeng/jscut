@@ -20,13 +20,13 @@ function GcodeConversionViewModel(options, miscViewModel, materialViewModel, too
     var self = this;
     var allowGen = true;
     self.miscViewModel = miscViewModel;
-    self.units = ko.observable("mm");
+    self.units = ko.observable("inch");
     self.unitConverter = new UnitConverter(self.units);
     self.gcode = ko.observable("");
     self.gcodeFilename = ko.observable("gcode.gcode");
     self.offsetX = ko.observable(0);
     self.offsetY = ko.observable(0);
-    self.returnTo00 = ko.observable(false);
+    self.returnTo00 = ko.observable(true);
 
     self.unitConverter.add(self.offsetX);
     self.unitConverter.add(self.offsetY);
